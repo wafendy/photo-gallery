@@ -1,0 +1,33 @@
+#modal-gallery.modal.modal-gallery.hide.fade{:tabindex => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} &times;
+    %h3.modal-title
+
+  .modal-body
+    .modal-image
+  .modal-footer
+    %a.btn.btn-info.modal-prev
+      %i.icon-arrow-left.icon-white
+      Previous
+    %a.btn.btn-primary.modal-next
+      Next
+      %i.icon-arrow-right.icon-white
+    %a.btn.btn-success.modal-play.modal-slideshow{"data-slideshow" => "3500"}
+      %i.icon-play.icon-white
+      Slideshow
+
+%ul.breadcrumb
+  %li
+    %a{:href => "/"}Home
+    %span.divider /
+  %li.active
+    =@album  
+
+#gallery{"data-toggle"=>"modal-gallery", "data-target"=>"#modal-gallery"}
+  %ul.thumbnails
+    -@images.each do |image|
+      %li.span2
+        %a{"data-gallery" => "gallery", :href => "/galleries/#{@album}/#{image[:orig]}"}
+          %img{:class => "img-polaroid", :src => "/galleries/#{@album}/#{image[:tn]}"}
+
+
