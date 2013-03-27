@@ -12,6 +12,10 @@ body {
   padding: 20px 0;
 }
 
+.stack {
+  padding-right: 20px;
+}
+
 
 /**
  * Grid container

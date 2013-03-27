@@ -3,33 +3,21 @@
     %a{:href => "/"}Home
     %span.divider /
   %li.active
-    About  
+    About
 
 
 .row
   .span4
     %img{:class => "img-polaroid", :src => "img/mugshot.png"}
-  .span3
-    %address
-      %strong Pinterest 
-      %br
-      %a{:href => "http://pinterest.com/williamafendy"} http://pinterest.com/williamafendy      
-    %address
-      %strong ModelMayhem 
-      %br
-      %a{:href => "http://www.modelmayhem.com/819130"} http://www.modelmayhem.com/819130
-
-    %address
-      %strong YouTube 
-      %br
-      %a{:href => "http://www.youtube.com/user/williamafendy"} http://www.youtube.com/user/williamafendy
-
-    %address
-      %strong LinkedIn 
-      %br
-      %a{:href => "http://www.linkedin.com/in/williamafendy"} http://www.linkedin.com/in/williamafendy
-      
-    %address
-      %strong GitHub 
-      %br
-      %a{:href => "http://github.com/wafendy"} http://github.com/wafendy     
+  .span8
+    .btn-group
+      %a{:href => "http://pinterest.com/williamafendy"}
+        %img#pinterest.stack{:src => "img/pinterest_g.png"}
+      %a{:href => "http://www.modelmayhem.com/819130"}
+        %img#modelmayhem.stack{:src => "img/modelmayhem_g.png"}
+      %a{:href => "http://www.youtube.com/user/williamafendy"}
+        %img#youtube.stack{:src => "img/youtube_g.png"}
+      %a{:href => "http://www.linkedin.com/in/williamafendy"}
+        %img#linkedin.stack{:src => "img/linkedin_g.png"}
+      %a{:href => "http://github.com/wafendy"}
+        %img#github.stack{:src => "img/github_g.png"}
