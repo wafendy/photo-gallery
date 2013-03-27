@@ -5,20 +5,18 @@ require 'yaml'
 require 'mini_magick'
 require 'json'
 
-
-
 get '/' do
   @albums = Array.new
   Dir[File.join(File.expand_path(File.dirname(__FILE__)), 'public/galleries/*/')].map do |dir|
     cover_photo = nil
-    Dir.glob(File.join(dir, '*.{jpg,gif,png}')) do |jpg_file|    
+    Dir.glob(File.join(dir, '*.{jpg,gif,png}')) do |jpg_file|
       filename = File.basename(jpg_file,File.extname(jpg_file))
       unless filename.end_with?('_tn')
         thumbnail_name = [filename, '_tn', File.extname(jpg_file)].join()
         cover_photo ||= thumbnail_name
         unless File.exists?(File.join(dir,thumbnail_name))
           image = MiniMagick::Image.open(jpg_file)
-          image.resize('200x200')
+          image.resize('200')
           image.write File.join(dir, thumbnail_name)
         end
       end
@@ -33,14 +31,14 @@ end
 get '/album/:name' do
   @album = params[:name]
   @images = Array.new
-  Dir.glob(File.join(File.expand_path(File.dirname(__FILE__)), 'public/galleries', params[:name], '*.{jpg,gif,png}')) do |jpg_file|    
-    filename = File.basename(jpg_file,File.extname(jpg_file)) 
+  Dir.glob(File.join(File.expand_path(File.dirname(__FILE__)), 'public/galleries', params[:name], '*.{jpg,gif,png}')) do |jpg_file|
+    filename = File.basename(jpg_file,File.extname(jpg_file))
     thumbnail_name = [filename, '_tn', File.extname(jpg_file)].join()
     unless filename.end_with?('_tn')
       @images.push({:orig => File.basename(jpg_file), :tn => thumbnail_name})
     end
   end
-    
+
   haml :album
 end
 

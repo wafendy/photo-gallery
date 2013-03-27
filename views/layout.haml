@@ -1,22 +1,22 @@
-!!!  
-%html  
-  %head  
-    %title William Afendy Photography 
-    %link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css") 
-    %link(rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css") 
+!!!
+%html
+  %head
+    %title William Afendy Photography
+    %link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    %link(rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css")
 
-    %link(rel="stylesheet" href="/bootstrap-gallery/css/bootstrap-image-gallery.min.css") 
+    %link(rel="stylesheet" href="/bootstrap-gallery/css/bootstrap-image-gallery.min.css")
 
-    %link(rel="stylesheet" href="/css/styles.css") 
+    %link(rel="stylesheet" href="/css/styles.css")
   %body
 
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
         .container
           %button{:type => 'button', :class => 'btn btn-navbar', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
-            %span.icon-bar            
-            %span.icon-bar            
-            %span.icon-bar    
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
           %a{:class => 'brand', :href => '/'}
             William Afendy
           .nav-collapse.collapse
@@ -34,7 +34,13 @@
       =yield
 
     %script{:type => "text/javascript", :src => "/js/jquery-1.9.1.min.js"}
-    %script{:type => "text/javascript", :src => "/bootstrap/js/bootstrap.min.js"} 
-    %script{:type => "text/javascript", :src => "/js/load-image.min.js"} 
-    %script{:type => "text/javascript", :src => "/bootstrap-gallery/js/bootstrap-image-gallery.js"} 
-    %script{:type => "text/javascript", :src => "/js/retina.js"} 
+    %script{:type => "text/javascript", :src => "/js/jquery.imagesloaded.min.js"}
+    %script{:type => "text/javascript", :src => "/js/jquery.wookmark.min.js"}
+
+
+    %script{:type => "text/javascript", :src => "/bootstrap/js/bootstrap.min.js"}
+    %script{:type => "text/javascript", :src => "/js/load-image.min.js"}
+    %script{:type => "text/javascript", :src => "/bootstrap-gallery/js/bootstrap-image-gallery.js"}
+    %script{:type => "text/javascript", :src => "/js/retina.js"}
+
+    %script{:type => "text/javascript", :src => "/js/gallery.js"}

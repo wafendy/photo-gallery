@@ -21,13 +21,14 @@
     %a{:href => "/"}Home
     %span.divider /
   %li.active
-    =@album  
+    =@album
 
-#gallery{"data-toggle"=>"modal-gallery", "data-target"=>"#modal-gallery"}
-  %ul.thumbnails
-    -@images.each do |image|
-      %li.span2
-        %a{"data-gallery" => "gallery", :href => "/galleries/#{@album}/#{image[:orig]}"}
-          %img{:class => "img-polaroid", :src => "/galleries/#{@album}/#{image[:tn]}"}
-
-
+/
+  Wookmark Thumbnails
+#container{"data-toggle"=>"modal-gallery", "data-target"=>"#modal-gallery"}
+  #main{:role => "main"}
+    %ul{:id => "tiles"}
+      -@images.each do |image|
+        %li
+          %a{:href => "/galleries/#{@album}/#{image[:orig]}", "data-gallery" => "gallery"}
+            %img{:src => "/galleries/#{@album}/#{image[:tn]}"}

@@ -1,5 +1,18 @@
+/
+  Need to look at Wookmark or Masonry for Pinterest style layout.
+  https://github.com/GBKS/Wookmark-jQuery
+
+/
+  jquery.imagesloaded.min.js
+  https://github.com/desandro/imagesloaded
+
+
+
+
+
 %ul.breadcrumb
-  %li.active Home  
+  %li.active Home
+
 
 -if @albums.length == 0
   .alert.alert-info
@@ -14,9 +27,9 @@
         %li mkdir folder1
         %li cd folder1
         %li populate *.jpg file(s) here
-        %li add info.yaml 
+        %li add info.yaml
 
-    %p 
+    %p
       Sample content of <code>info.yaml</code>
       %pre
         = preserve do
@@ -25,8 +38,13 @@
             title: Album Title
             desc: Add description here
 
-%ul.thumbnails
-  -@albums.each do |album|
-    %li.span2
-      %a{:href => "album/#{album[:album]}"}
-        %img{:class => "img-polaroid", :src => "galleries/#{album[:album]}/#{album[:cover_photo]}"}
+
+/
+  Wookmark Thumbnails
+#container
+  #main{:role => "main"}
+    %ul{:id => "tiles"}
+      -@albums.each do |album|
+        %li
+          %a{:href => "album/#{album[:album]}"}
+            %img{:src => "galleries/#{album[:album]}/#{album[:cover_photo]}"}
