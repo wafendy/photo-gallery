@@ -5,6 +5,8 @@ require 'yaml'
 require 'mini_magick'
 require 'json'
 
+#branch ansi
+
 get '/' do
   @albums = Array.new
   Dir[File.join(File.expand_path(File.dirname(__FILE__)), 'public/galleries/*/')].map do |dir|
