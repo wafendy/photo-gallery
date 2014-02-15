@@ -6,6 +6,7 @@ gem 'haml'
 gem 'thin'
 gem 'json'
 gem 'mini_magick'
+gem 'puma'
 
 # group :development do
 # end
